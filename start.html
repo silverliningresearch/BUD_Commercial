@@ -160,8 +160,10 @@
       
       if (flightForInterview && flightForInterview.Flight) url = url + "urlVar01=" + flightForInterview.Flight;
       if (flightForInterview && flightForInterview.DestName) url = url + "&urlVar02=" + flightForInterview.DestName;
-
+      if (flightForInterview && flightForInterview.Dest) url = url + "&urlVar03=" + flightForInterview.Dest;
+      if (flightForInterview && flightForInterview.Airline) url = url + "&urlVar04=" + flightForInterview.Airline;
       document.getElementById('inputFlightCodeID').value = "";
+      localStorage.clear();
       window.location.href = url;
     }
 

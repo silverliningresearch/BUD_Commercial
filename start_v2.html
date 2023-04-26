@@ -157,19 +157,17 @@
      
       console.log("start_new_interview");
      
-      let url = "https://silverlining.survalyzer.eu/zzhdctivhk?";
+      let url = "https://silverliningresearch.github.io/BUD_Commercial/survey.html?";
       
       //
       if (flightForInterview && flightForInterview.Flight) url = url + "urlVar01=" + flightForInterview.Flight;
       if (flightForInterview && flightForInterview.DestName) url = url + "&urlVar02=" + flightForInterview.DestName;
       if (flightForInterview && flightForInterview.Dest) url = url + "&urlVar03=" + flightForInterview.Dest;
       if (flightForInterview && flightForInterview.Airline) url = url + "&urlVar04=" + flightForInterview.Airline;
-      window.localStorage.clear();
+      
       localStorage.clear();
-      localStorage.clear();;
       document.getElementById('inputFlightCodeID').value = "";
       window.location.href = url;
-      localStorage.clear();;
     }
 
       window.addEventListener('load', function () {

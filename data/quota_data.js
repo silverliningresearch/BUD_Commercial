@@ -1459,7 +1459,7 @@
     {
         "Airport_Airline": "LUX-LG",
         "Quarter": "2024-Q1",
-        "Quota": 1.0
+        "Quota": 2.0
     },
     {
         "Airport_Airline": "FRA-LH",
@@ -1534,7 +1534,7 @@
     {
         "Airport_Airline": "HRG-SM",
         "Quarter": "2024-Q1",
-        "Quota": 1.0
+        "Quota": 3.0
     },
     {
         "Airport_Airline": "BRU-SN",

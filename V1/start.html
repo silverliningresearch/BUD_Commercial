@@ -1,6 +1,6 @@
 <html>
     <head>
-		<title>Daily Plan - BUD Commercial Survey</title>
+		<title>BUD Commercial Survey</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   
 		<script src="data/quota_data.js"></script>
@@ -9,7 +9,7 @@
     <script src="scripts/PrepareData.js"></script>
 		<script src="scripts/CalculateData.js"></script>
     <script src="scripts/flight_search.js"></script>
-    <script type="text/javascript" src="https://silverliningresearch.github.io/daily_plan_data_sur_v3/BUD_Commercial/interview_statistics.js"></script> 
+    <script type="text/javascript" src="https://silverliningresearch.github.io/daily_plan_data_sur/BUD_Commercial/data/interview_data.js"></script> 
 
     <link href="css/styles.css" rel ="stylesheet" type="text/css" />
     <style>
@@ -46,6 +46,7 @@
       .blue {background-color: #0099CC;;} /* Blue */ 
       .yellow {background-color: #da872b;;} /* Yellow */ 
       
+      h1 {text-align: center;}
     </style>
 
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -152,12 +153,56 @@
         document.getElementById("overall_status").innerHTML =overall_status + " | " + "Data updated at " + download_time;
      }
     
+    function start_new_interview() {
+     
+      console.log("start_new_interview");
+     
+      let url = "https://silverliningresearch.github.io/BUD_Commercial/survey.html?";
+      
+      //
+      if (flightForInterview && flightForInterview.Flight) url = url + "urlVar01=" + flightForInterview.Flight;
+      if (flightForInterview && flightForInterview.DestName) url = url + "&urlVar02=" + flightForInterview.DestName;
+      if (flightForInterview && flightForInterview.Dest) url = url + "&urlVar03=" + flightForInterview.Dest;
+      if (flightForInterview && flightForInterview.Airline) url = url + "&urlVar04=" + flightForInterview.Airline;
+      
+      localStorage.clear();
+      document.getElementById('inputFlightCodeID').value = "";
+      window.location.href = url;
+    }
+
+      window.addEventListener('load', function () {
+      load_flight_list();
+      document.getElementById('inputFlightCodeID').value = "";
+    });
+
+
     </script>
   </head>
   <body>
 
-    <h1>Daily Plan - BUD Commercial Survey</h1>
+    <h4  style="text-align:center;">BUD Commercial Survey</h4>
+    </br>
+  <!-- </br></br></br> -->
+    <div>
+      <input list="flightDropBoxList" 
+        onchange="select_flight()"  
+        onkeyup="update_drop_box_list()" 
+        placeholder="Please key in flight number:"
+        name="inputFlightCodeID" id="inputFlightCodeID" >
+      <datalist id="flightDropBoxList">
+    </div>  
+  
+    <div>
+      </br></br></br> </br></br>
+      <button onclick="start_new_interview()" class="button yellow">Start survey</button>
+      </br></br>
+    </div>
 
+    
+    <div style="background-color:#efcb65">
+      </br>
+    </div>
+    
     <h4 id="overall_status"></h4>
 
     <div id="dashboard_div">

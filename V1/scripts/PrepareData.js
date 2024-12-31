@@ -131,7 +131,7 @@ function prepareInterviewData() {
   removed_ids_data = JSON.parse(removed_ids);
 
   var quota_data_temp = JSON.parse(airport_airline_quota);
-  var interview_data_full  = JSON.parse(interview_statistics );
+  var interview_data_full  = JSON.parse(interview_data_raw);
   var flight_list_full  = JSON.parse(BUD_Flight_List_Raw);
 
   initCurrentTimeVars();		
@@ -156,19 +156,40 @@ function prepareInterviewData() {
   for (i = 0; i < interview_data_full.length; i++) {
     var interview = interview_data_full[i];
 
-    var interview_year = interview["InterviewDate"].substring(0,4);
-    var interview_month = interview["InterviewDate"].substring(5,7);//"2023-04-03 06:18:18"
+    var interview_year = interview["InterviewEndDate"].substring(0,4);
+    var interview_month = interview["InterviewEndDate"].substring(5,7);//"2023-04-03 06:18:18"
     var interview_quarter = getQuarterFromMonth(interview_month, interview_year);
 
-    if (currentQuarter == interview_quarter) 
+    if ((interview.InterviewState == "Completed") 
+      //&& (currentMonth == interview_month)  
+      && (currentQuarter == interview_quarter)  
+      )
     {
-      if (interview["quota_id"]) {
-        interview.InterviewEndDate = interview["InterviewDate"];
-        interview.Airport_Airline = interview.quota_id;
-        interview_data.push(interview);
+      if (interview["Dest"]) {
+        var airport_code = interview["Dest"];
+        
+        var airline_code = ""
+        if (interview["AirlineCode"])  airline_code = interview["AirlineCode"];
+
+        var airport_airline = '"Airport_Airline"' + ":" + '"' +  airport_code + "-" + airline_code + '", ';
+        var InterviewEndDate = '"InterviewEndDate"' + ":" + '"' +  interview["InterviewEndDate"] ;
+        var str = '{' + airport_airline + InterviewEndDate + '"}';
+
+        if (isvalid_id(interview["InterviewId"])) //check if valid
+        {
+          interview_data.push(JSON.parse(str));
+        }
+        else
+        {
+          console.log("invalid id: ", interview);
+        }
+      }
+      else{
+        console.log("ignored interview: ", interview);
+      }
     }
-   }
   }
+
   //prepare flight list
   //empty the list
   today_flight_list = [];

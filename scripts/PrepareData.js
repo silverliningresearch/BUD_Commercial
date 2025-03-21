@@ -165,6 +165,13 @@ function prepareInterviewData() {
       if (interview["quota_id"]) {
         interview.InterviewEndDate = interview["InterviewDate"];
         interview.Airport_Airline = interview.quota_id;
+         
+        //correction for EZS / EC
+        if (interview.Airport_Airline == "GVA-EC") interview.Airport_Airline = "GVA-U2";
+        if (interview.Airport_Airline == "BSL-EC") interview.Airport_Airline = "BSL-U2";
+        if (interview.Airport_Airline == "CDG-EC") interview.Airport_Airline = "CDG-U2";
+        if (interview.Airport_Airline == "LYS-EC") interview.Airport_Airline = "LYS-U2";
+        
         interview_data.push(interview);
     }
    }
@@ -184,7 +191,9 @@ function prepareInterviewData() {
 
     if ((flight_list_full[i].Flight.substring(0,3) == "EZY") 
       || (flight_list_full[i].Flight.substring(0,3) == "EJU") 
-    || (flight_list_full[i].Flight.substring(0,3) == "EZS")) flight_list_full[i].AirlineCode = "U2";
+      || (flight_list_full[i].Flight.substring(0,3) == "EZS")
+      || (flight_list_full[i].Flight.substring(0,3) == "EC")
+    ) flight_list_full[i].AirlineCode = "U2";
 
         
     let flight = flight_list_full[i];

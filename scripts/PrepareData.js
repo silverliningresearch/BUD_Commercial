@@ -172,6 +172,9 @@ function prepareInterviewData() {
         if (interview.Airport_Airline == "CDG-EC") interview.Airport_Airline = "CDG-U2";
         if (interview.Airport_Airline == "LYS-EC") interview.Airport_Airline = "LYS-U2";
         
+        if (interview.Airport_Airline == "LGW-TOM4157") interview.Airport_Airline = "LGW-TOM";
+        if (interview.Airport_Airline == "MAN-TOM2179") interview.Airport_Airline = "MAN-TOM";
+
         interview_data.push(interview);
     }
    }

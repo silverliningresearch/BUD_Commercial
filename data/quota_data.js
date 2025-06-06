@@ -5394,7 +5394,7 @@
         "Quota": 1.0
     },
     {
-        "Airport_Airline": "OSL-D8",
+        "Airport_Airline": "OSL-DY",
         "Quarter": "2025-Q2",
         "Quota": 8.0
     },
@@ -6149,7 +6149,7 @@
         "Quota": 16.0
     },
     {
-        "Airport_Airline": "NAP-W6",
+        "Airport_Airline": "NAP-W4",
         "Quarter": "2025-Q2",
         "Quota": 7.0
     },
@@ -6224,7 +6224,7 @@
         "Quota": 13.0
     },
     {
-        "Airport_Airline": "VCE-W6",
+        "Airport_Airline": "VCE-W4",
         "Quarter": "2025-Q2",
         "Quota": 3.0
     },

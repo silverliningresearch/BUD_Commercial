@@ -160,24 +160,53 @@ function prepareInterviewData() {
     var interview_month = interview["InterviewDate"].substring(5,7);//"2023-04-03 06:18:18"
     var interview_quarter = getQuarterFromMonth(interview_month, interview_year);
 
-    if (currentQuarter == interview_quarter) 
+    if ((currentQuarter == interview_quarter) && interview["quota_id"])
     {
-      if (interview["quota_id"]) {
-        interview.InterviewEndDate = interview["InterviewDate"];
-        interview.Airport_Airline = interview.quota_id;
-         
-        //correction for EZS / EC
-        if (interview.Airport_Airline == "GVA-EC") interview.Airport_Airline = "GVA-U2";
-        if (interview.Airport_Airline == "BSL-EC") interview.Airport_Airline = "BSL-U2";
-        if (interview.Airport_Airline == "CDG-EC") interview.Airport_Airline = "CDG-U2";
-        if (interview.Airport_Airline == "LYS-EC") interview.Airport_Airline = "LYS-U2";
-        
-        if (interview.Airport_Airline == "LGW-TOM4157") interview.Airport_Airline = "LGW-TOM";
-        if (interview.Airport_Airline == "MAN-TOM2179") interview.Airport_Airline = "MAN-TOM";
+      interview.InterviewEndDate = interview["InterviewDate"];
+      interview.Airport_Airline = interview.quota_id;
 
-        interview_data.push(interview);
+      //correction for EZS / EC
+      if (currentQuarter == "2025-Q3") 
+      {
+          if ((interview.Airport_Airline == "BSL-EZS") 
+            || (interview.Airport_Airline == "BSL-EJU")
+            || (interview.Airport_Airline == "BSL-EZY"))
+          {
+              interview.Airport_Airline = "BSL-EC";
+          }
+
+          if ((interview.Airport_Airline == "CDG-EZS") 
+            || (interview.Airport_Airline == "CDG-EJU")
+            || (interview.Airport_Airline == "CDG-EZY"))
+          {
+              interview.Airport_Airline = "CDG-EC";
+          }
+
+          if ((interview.Airport_Airline == "GVA-EZS") 
+            || (interview.Airport_Airline == "GVA-EJU")
+            || (interview.Airport_Airline == "GVA-EZY"))
+          {
+              interview.Airport_Airline = "GVA-EC";
+          }
+
+          if ((interview.Airport_Airline == "LGW-EZS") 
+            || (interview.Airport_Airline == "LGW-EJU")
+            || (interview.Airport_Airline == "LGW-EZY"))
+          {
+              interview.Airport_Airline = "LGW-EC";
+          }
+
+         if ((interview.Airport_Airline == "LYS-EZS") 
+            || (interview.Airport_Airline == "LYS-EJU")
+            || (interview.Airport_Airline == "LYS-EZY"))
+          {
+              interview.Airport_Airline = "LYS-EC";
+          }
+
+      }
+
+      interview_data.push(interview);
     }
-   }
   }
   //prepare flight list
   //empty the list
@@ -196,7 +225,7 @@ function prepareInterviewData() {
       || (flight_list_full[i].Flight.substring(0,3) == "EJU") 
       || (flight_list_full[i].Flight.substring(0,3) == "EZS")
       || (flight_list_full[i].Flight.substring(0,3) == "EC")
-    ) flight_list_full[i].AirlineCode = "U2";
+    ) flight_list_full[i].AirlineCode = "EC";
 
         
     let flight = flight_list_full[i];

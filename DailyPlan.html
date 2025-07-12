@@ -80,6 +80,13 @@
         data.addColumn('number', 'Priority');
         
         //add data
+          // Remove duplicates based on 'name' and 'age'
+        // var uniqueArray = daily_plan_data.filter((item, index, self) => {
+        //   const key = `${item.Flight}-${item.Time}`;
+        //   return index === self.findIndex((t) => `${t.Flight}-${t.Time}` === key);
+        // });
+
+        var uniqueArray = daily_plan_data;
         for (i = 0; i < daily_plan_data.length; i++) {
           var row = daily_plan_data[i];
             { 

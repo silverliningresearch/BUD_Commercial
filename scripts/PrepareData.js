@@ -163,7 +163,7 @@ function prepareInterviewData() {
     if ((currentQuarter == interview_quarter) && interview["quota_id"])
     {
       interview.InterviewEndDate = interview["InterviewDate"];
-      interview.Airport_Airline = interview.quota_id;
+      interview.Airport_Airline = interview.quota_id.substring(0,7);
 
       //correction for EZS / EC
       if (currentQuarter == "2025-Q3") 
@@ -202,6 +202,11 @@ function prepareInterviewData() {
           {
               interview.Airport_Airline = "LYS-EC";
           }
+
+          if (interview.Airport_Airline == "VCE-W4") 
+          {
+              interview.Airport_Airline = "VCE-W6";
+          }    
 
       }
 

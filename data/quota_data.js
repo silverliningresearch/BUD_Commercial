@@ -7264,7 +7264,7 @@
 
 
 
-       {
+     {
         "Airport_Airline": "AGP-FR",
         "Quarter": "2025-Q4",
         "Quota": 5.0
@@ -7812,17 +7812,12 @@
     {
         "Airport_Airline": "MAN-FR",
         "Quarter": "2025-Q4",
-        "Quota": 7.0
+        "Quota": 8.0
     },
     {
         "Airport_Airline": "MAN-LS",
         "Quarter": "2025-Q4",
         "Quota": 4.0
-    },
-    {
-        "Airport_Airline": "MAN-FR",
-        "Quarter": "2025-Q4",
-        "Quota": 1.0
     },
     {
         "Airport_Airline": "MLA-FR",
@@ -7855,7 +7850,7 @@
         "Quota": 6.0
     },
     {
-        "Airport_Airline": "MXP-W6",
+        "Airport_Airline": "MXP-W4",
         "Quarter": "2025-Q4",
         "Quota": 7.0
     },
@@ -7865,7 +7860,7 @@
         "Quota": 4.0
     },
     {
-        "Airport_Airline": "NAP-W6",
+        "Airport_Airline": "NAP-W4",
         "Quarter": "2025-Q4",
         "Quota": 7.0
     },
@@ -7985,7 +7980,7 @@
         "Quota": 2.0
     },
     {
-        "Airport_Airline": "RMO-W6",
+        "Airport_Airline": "RMO-W4",
         "Quarter": "2025-Q4",
         "Quota": 2.0
     },
@@ -8032,12 +8027,7 @@
     {
         "Airport_Airline": "STN-FR",
         "Quarter": "2025-Q4",
-        "Quota": 20.0
-    },
-    {
-        "Airport_Airline": "STN-FR",
-        "Quarter": "2025-Q4",
-        "Quota": 1.0
+        "Quota": 21.0
     },
     {
         "Airport_Airline": "STR-EW",
@@ -8135,7 +8125,7 @@
         "Quota": 3.0
     },
     {
-        "Airport_Airline": "VCE-W6",
+        "Airport_Airline": "VCE-W4",
         "Quarter": "2025-Q4",
         "Quota": 3.0
     },

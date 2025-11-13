@@ -7505,7 +7505,7 @@
         "Quota": 1.0
     },
     {
-        "Airport_Airline": "CPH-DY",
+        "Airport_Airline": "CPH-D8",
         "Quarter": "2025-Q4",
         "Quota": 1.0
     },

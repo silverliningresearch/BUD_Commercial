@@ -9939,7 +9939,7 @@
         "Quota": 1.0
     },
     {
-        "Airport_Airline": "RMO-W6",
+        "Airport_Airline": "RMO-W4",
         "Quarter": "2026-Q2",
         "Quota": 1.0
     },

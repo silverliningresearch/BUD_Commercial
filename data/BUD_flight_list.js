@@ -1,17 +1,6 @@
  let BUD_Flight_List_Raw = `
 [
- {
-  "Time": "0500",
-  "Date": "01-09-2026",
-  "Month": "09",
-  "Dest": "TLV",
-  "DestName": "TLV (Tel Aviv TLV - Israel)",
-  "AirlineCode": "W6",
-  "Airline": "Wizzair",
-  "Flight": "W6 2503",
-  "A_D": "DEP",
-  "Schengen": "N"
- },
+
  {
   "Time": "0500",
   "Date": "01-09-2026",

@@ -569,7 +569,18 @@ function prepareInterviewData() {
             if ((interview.Airport_Airline == "ARN-D8") )
             {
                 interview.Airport_Airline = "ARN-DY";
-            }                     
+            }         
+
+
+            if ((interview.Airport_Airline == "FMM-W4") )
+            {
+                interview.Airport_Airline = "FMM-W6";
+            }
+
+            if ((interview.Airport_Airline == "NAP-W4") )
+            {
+                interview.Airport_Airline = "NAP-W6";
+            }                        
         }        
       interview_data.push(interview);
     }
